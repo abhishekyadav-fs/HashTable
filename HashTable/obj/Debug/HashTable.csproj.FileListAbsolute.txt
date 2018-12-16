@@ -3,3 +3,4 @@ D:\Cracking The Coding Interview\Array and Strings\HashTable\HashTable\bin\Debug
 D:\Cracking The Coding Interview\Array and Strings\HashTable\HashTable\bin\Debug\HashTable.pdb
 D:\Cracking The Coding Interview\Array and Strings\HashTable\HashTable\obj\Debug\HashTable.exe
 D:\Cracking The Coding Interview\Array and Strings\HashTable\HashTable\obj\Debug\HashTable.pdb
+D:\Cracking The Coding Interview\Array and Strings\HashTable\HashTable\obj\Debug\HashTable.csprojResolveAssemblyReference.cache
