@@ -59,5 +59,13 @@ namespace HashTable
             int index = HashFunc(key) % bucket.Length;
             bucket[index] = value;
         }
+
+        public bool ContainsKey(int key)
+        {
+            int hash = HashFunc(key);
+            int index = hash % bucket.Length;
+            if(bucket[index]!=null || String.IsNullOrEmpty(bucket[index])) { return true; }
+            else { return false; }
+        }
     }
 }
