@@ -1,6 +1,6 @@
 # HashTable
 HashTable is .Net like implementation of HashTable ADT using C# language.
-#Constructor
+# Constructor
 1. HashTableImplementation()
 2. HashTableImplementation(int capacity)
 
@@ -9,5 +9,5 @@ HashTable is .Net like implementation of HashTable ADT using C# language.
 2. ContainsValue(string value)
 3. ContainsKey(int key)
 
-#Properties
+# Properties
 1. Count
