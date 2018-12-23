@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,11 +13,26 @@ namespace HashTable
     /// <summary>
     /// This hastable is implemented to store only string value with integer keys 
     /// </summary>
-    public class HashTableImplementation
+    public class HashTableImplementation : IEnumerable
     {
         private string[] bucket;
 
-
+        /// <summary>
+        ///  Rrturning the count in hashtable
+        /// </summary>
+        public int Count {
+            get
+            {
+                int cnt = 0;
+                foreach(var i in bucket) {
+                    if(i!=null || i != string.Empty)
+                    {
+                        cnt++;
+                    }
+                }
+                return cnt;
+            }
+        }
         /// <summary>
         /// Indexer to provide array like encapsulation to hashtable
         /// </summary>
@@ -37,6 +53,13 @@ namespace HashTable
         public HashTableImplementation(){
             this.bucket = new string[1000];
         }
+        // Ctor with capacity
+        public HashTableImplementation(int capacity)
+        {
+            this.bucket = new string[capacity];
+        }
+
+
         //Method to compute the hash
         private int HashFunc(int key)
         {
@@ -60,12 +83,37 @@ namespace HashTable
             bucket[index] = value;
         }
 
+        /// <summary>
+        /// Check if hashtable contains key
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public bool ContainsKey(int key)
         {
             int hash = HashFunc(key);
             int index = hash % bucket.Length;
             if(bucket[index]!=null || String.IsNullOrEmpty(bucket[index])) { return true; }
             else { return false; }
+        }
+
+        /// <summary>
+        /// Check if the hashtable has the value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public bool ContainsValue(string value)
+        {
+            foreach(var item in bucket)
+            {
+                if (item == value) { return true; }
+                
+            }
+            return false;
+        }
+
+        private IEnumerator GetEnumerator()
+        {
+            return bucket.GetEnumerator();
         }
     }
 }
